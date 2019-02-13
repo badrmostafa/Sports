@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "~/Views/Home/_LayoutHome.cshtml";
+
+}
+
+
+
+<section class="visual-container" style="background-color:palegoldenrod;">
+    <div class="visual-area">
+        <div class="container">
+            <h2>@ViewBag.client.Head</h2>
+            @foreach (var item in ViewBag.cl)
+            {
+                <ul class="testimonials" style="display:inline;">
+                    <li>
+                        <div class="img-holder"><img src="@item.Image" height="84" width="124" alt=""></div>
+                        <p><em>@item.Description</em></p>
+                    </li>
+                </ul>
+            }
+
+        </div>
+    </div>
+    <div class="visual-area">
+        <div class="container">
+            <h2>@ViewBag.pricingplan.Title</h2>
+            <div class="pricing-tables" style="background-color:darkgoldenrod;">
+
+                @foreach (var item in ViewBag.pr)
+                {
+                    <div class="plan">
+                        <div class="head">
+                            <h3>@item.Head</h3>
+                        </div>
+                        <div class="price">
+                            <span class="price-main"><span class="symbol">$</span>@item.Price</span>
+                            <span class="price-additional">@item.Head1</span>
+                        </div>
+                        <ul class="item-list">
+                            <li>@item.Head2</li>
+                        </ul>
+
+                        <a href="http://localhost:50316/enrollments/Create" class="btn btn-danger rounded">Enroll</a>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</section>

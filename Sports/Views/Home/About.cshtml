@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "~/Views/Home/_LayoutHome.cshtml";
+
+}
+
+
+<section class="area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <ul class="visual-list">
+                    @foreach (var item in ViewBag.ts)
+                    {
+                        <li>
+                            <div class="img-holder">
+                                <img src="@item.Image" width="100" height="65" alt="">
+                            </div>
+                            <div class="text-holder">
+                                <h3>@item.Head</h3>
+                                <p>@item.Description</p>
+                            </div>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+            <div class="col-md-7">
+                <div class="slide-holder">
+                    <div @*class="img-slide scroll-trigger"*@><img src="@ViewBag.sp.Image1" height="625" width="684" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
